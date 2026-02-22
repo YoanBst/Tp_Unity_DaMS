@@ -49,13 +49,13 @@ Prérequis : Unity Hub installé + un Tileset (planche de textures 2D) télécha
 
 4. Création du Niveau (Tilemap)
 
-    Créer la grille : Clic droit dans Hierarchy > 2D Object > Tilemap > Rectangular. Renommer en Background_Sol.
+    Créer la grille : Clic droit dans Hierarchy > 2D Object > Tilemap > Rectangular. Renommer la en Background.
 
     Créer la Palette : Menu Window > 2D > Tile Palette. Cliquer sur Create New Palette et sauvegarder dans un nouveau dossier Tiles.
 
     Préparer les pinceaux : Glisser l'image globale depuis le dossier Project vers la fenêtre Tile Palette.
 
-    Dessiner : Utiliser l'outil Pinceau (B) dans la Tile Palette et dessiner dans la Scene.
+    Dessiner : Utiliser l'outil Pinceau  dans la Tile Palette et dessiner dans la Scene.
 
     ⚠️ Bug de chevauchement / clignotement ? > Sélectionner Background_Sol dans la Hierarchy, et dans l'Inspector (Tilemap Renderer), vérifier que le Order in Layer est à 0 ou -1.
 
