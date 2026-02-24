@@ -1,68 +1,78 @@
-TP 1 : Initiation Unity 2D & Création d'Environnement
+TP 1 : Initiation Unity & Création du Background
 
-Prérequis : Unity Hub installé + un Tileset (planche de textures 2D) téléchargé.
+Objectif : Configurer l'environnement de développement et créer votre premier niveau en Pixel Art.
+
+Prérequis : * Unity Hub installé.
+
+    Tileset 2D téléchargé (Trouvable sur ce déport : TilesBackground/cloud_tileset/cloud_tileset.png).
+
+
 1. Initialisation du Projet
 
-    Ouvrir Unity Hub > New Project > 2D Core.
+    Ouvrez Unity Hub et créez un nouveau projet.
 
-    Nommer le projet et cliquer sur Create Project.
+    Sélectionnez le template : Universal 2D (ou 2D Core).
 
-    Lexique de l'interface :
+    Félicitations ! Votre environnement est prêt. Voici quelques repères essentiels :
 
-        Hierarchy : Objets présents dans le niveau actuel.
+        À gauche (Hierarchy) : Liste tous les objets présents dans votre scène (ce qui s'affiche à l'écran).
 
-        Project : Fichiers et assets du jeu.
+        En bas (Project) : Contient vos dossiers, assets (images, sons), scènes et scripts.
 
-        Inspector : Réglages de l'objet sélectionné.
+        En haut (Play) : Le bouton "Run" permet de lancer et tester votre jeu en temps réel.
 
-        Scene / Game:  Vue de rendu final.
 
-2. Importation & Configuration (Spécial Pixel Art)
+2. Importation et Configuration des Assets
 
-    Dans Project, créer un dossier Art/Backgrounds et y glisser le Tileset.
+    Organisation : Créez un dossier Art dans l'onglet Project, puis un sous-dossier Floor. Glissez-y vos fichiers de tuiles (tiles).
 
-    Sélectionner l'image et appliquer strictement ceci dans l'Inspector :
+    Réglages techniques (Inspector) : Sélectionnez vos images et configurez-les ainsi à droite de l'écran :
 
-        Sprite Mode : Multiple
+        Sprite Mode : Multiple (pour découper la planche).
 
-        Pixels Per Unit (PPU) : 16
+        Pixels Per Unit (PPU) : 16.
 
-        Alpha Is Transparency (dans Advanced) : Coché
+        Filter Mode : Point (no filter).
 
-        Filter Mode : Point (no filter) (évite le flou)
+        Compression : None (pour garantir une qualité Pixel Art optimale).
 
-        Compression : None
+    Validation : Cliquez impérativement sur Apply.
 
-    Cliquer impérativement sur Apply.
 
-3. Découpage (Slicing)
+3. Découpage des Tuiles (Slicing)
 
-    Cliquer sur le bouton Sprite Editor (dans l'Inspector).
+    Toujours dans l'Inspector, cliquez sur le bouton Sprite Editor.
 
-    Menu Slice (en haut à gauche) :
+    Cliquez sur le menu Slice (en haut à gauche) :
 
-        Type : Grid By Cell Size
+        Type : Grid By Cell Size.
 
-        Pixel Size : X: 16 / Y: 16
+        Pixel Size : 16 x 16.
 
-    Cliquer sur le bouton Slice, puis sur Apply (en haut à droite) et fermer la fenêtre.
+    Cliquez sur le bouton Slice, puis sur Apply avant de fermer la fenêtre.
 
-4. Création du Niveau (Tilemap)
 
-    Créer la grille : Clic droit dans Hierarchy > 2D Object > Tilemap > Rectangular. Renommer la en Background.
+4. Création du Monde (Tilemap)
 
-    Créer la Palette : Menu Window > 2D > Tile Palette. Cliquer sur Create New Palette et sauvegarder dans un nouveau dossier Tiles.
+    Mise en place : Dans la Hierarchy, faites un clic droit > 2D Object > Tilemap > Rectangular.
 
-    Préparer les pinceaux : Glisser l'image globale depuis le dossier Project vers la fenêtre Tile Palette.
+    Outil Palette : Allez dans le menu Window > 2D > Tile Palette.
 
-    Dessiner : Utiliser l'outil Pinceau  dans la Tile Palette et dessiner dans la Scene.
+    Configuration de la palette :
 
-    ⚠️ Bug de chevauchement / clignotement ? > Sélectionner Background_Sol dans la Hierarchy, et dans l'Inspector (Tilemap Renderer), vérifier que le Order in Layer est à 0 ou -1.
+        Cliquez sur Create New Palette, donnez-lui un nom et enregistrez-la dans votre dossier.
 
-5. Test & Sauvegarde
+        Faites glisser votre asset découpé vers cette fenêtre pour afficher les tuiles individuelles.
+        
 
-    Appuyer sur Play (▶) en haut au centre pour tester le rendu.
+5. Dessiner votre Scène
 
-    Astuce : Si la caméra est trop zoomée, sélectionner Main Camera et augmenter la valeur de Size dans l'Inspector.
+Vous êtes maintenant parés pour créer votre premier monde !
 
-    Sauvegarder la scène avec Ctrl + S (ou Cmd + S).
+    Dessiner : Sélectionnez une tuile dans votre palette et cliquez sur la zone correspondante dans la scène.
+
+    Outils : Utilisez les icônes en haut de la palette pour peindre, remplir des zones ou effacer des tuiles.
+
+    Note : Le processus de création de carte peut être long. Si vous souhaitez gagner du temps, vous pouvez importer directement notre scène d'origine (située dans le dossier des cloud assets) via :
+
+    Assets -> Import Package -> Custom Package
