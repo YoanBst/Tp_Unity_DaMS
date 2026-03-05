@@ -4,7 +4,7 @@ Objectif : Configurer l'environnement de développement et créer votre premier 
 
 Prérequis : * Unity Hub installé.
 
-    Tileset 2D téléchargé (Trouvable sur ce déport : TilesBackground/cloud_tileset/cloud_tileset.png).
+    Tileset 2D téléchargé (Trouvable sur ce dépot : TilesBackground/cloud_tileset/cloud_tileset.png).
 
 
 1. Initialisation du Projet
@@ -63,7 +63,7 @@ Prérequis : * Unity Hub installé.
         Cliquez sur Create New Palette, donnez-lui un nom et enregistrez-la dans votre dossier.
 
         Faites glisser votre asset découpé vers cette fenêtre pour afficher les tuiles individuelles.
-        
+
 
 5. Dessiner votre Scène
 
@@ -73,6 +73,6 @@ Vous êtes maintenant parés pour créer votre premier monde !
 
     Outils : Utilisez les icônes en haut de la palette pour peindre, remplir des zones ou effacer des tuiles.
 
-    Note : Le processus de création de carte peut être long. Si vous souhaitez gagner du temps, vous pouvez importer directement notre scène d'origine (située dans le dossier des cloud assets) via :
+    Note : Le processus de création de carte peut être long. Si vous souhaitez gagner du temps, vous pouvez importer directement notre scène d'origine (située dans le dossier Assets) via :
 
     Assets -> Import Package -> Custom Package

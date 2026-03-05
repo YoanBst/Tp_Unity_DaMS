@@ -3,7 +3,7 @@ TP 2 : Intégration du Joueur et Déplacements
 Prérequis : TP 1 terminé (environnement en place) + un spritesheet (planche d'animation) de personnage téléchargé.
 1. Importation & Configuration du Sprite
 
-    Dans Project, créer un dossier Art/Player et y glisser le spritesheet du personnage.
+    Dans Project, aller dans le dossier ARt, y crée un dossier player,  et y glisser le spritesheet du personnage (vous trouverez nos personnages dans le dossier TilesCharacters)
 
     Sélectionner l'image et appliquer strictement ceci dans l'Inspector :
 
@@ -15,17 +15,17 @@ Prérequis : TP 1 terminé (environnement en place) + un spritesheet (planche d'
 
         Compression : None
 
-    Cliquer impérativement sur Apply.
+    Cliquer ensuite Apply.
 
 2. Découpage du Personnage (Slicing)
 
     Cliquer sur le bouton Sprite Editor (dans l'Inspector de l'image).
 
-    Menu Slice (en haut à gauche) :
+    Cliquer ensuite sur Slice, et modifier les paramètres comme ceci :
 
         Type : Grid By Cell Size
 
-        Pixel Size : X: 16 / Y: 16 (ou la taille correspondante, ex: 32x32)
+        Pixel Size : X: 16 / Y: 32 (NB : cela correspond si vous utilisez les personnages que nous vous fournissons, cela peut être légeremment différent pour d'autres modèle)
 
     Cliquer sur le bouton Slice, puis sur Apply (en haut à droite) et fermer la fenêtre.
 
@@ -33,29 +33,31 @@ Prérequis : TP 1 terminé (environnement en place) + un spritesheet (planche d'
 
     Déplier le spritesheet dans le dossier Project.
 
-    Glisser le premier sprite (le personnage qui regarde vers le bas) dans la Hierarchy (à gauche) ou dans la Scene.
+    Glisser le premier sprite (le personnage qui regarde vers le bas) dans la Hierarchie.
 
     Renommer l'objet généré en "Player".
 
-    Dans l'Inspector (Sprite Renderer), vérifier la position et les calques de rendu pour s'assurer qu'il apparait devant le décor.
+    Dans l'Inspector , vérifier la position et les calques de rendu pour s'assurer qu'il apparait devant le décor (modifier la valeur de Order in layer en lui assignantg une valeur diffèrente de 0 si besoin).
 
 
 4. Script de Déplacement (Grille par Grid)
 
-    Dans Project, créer un dossier Scripts.
+    Dans Project, allez dans le dossier Asset et créez un dossier Scripts.
 
     Clic droit > Create > C# Script et nommer le script PlayerController.
 
     Double-cliquer pour l'ouvrir dans Visual Studio.
 
-    Nous avons tout d'abord besoin de la fonction update, qui sera executée à chaque changement de frame.
+    NB : si le script ne s'ouvre pas directement avec VScode lorsque vous double-cliquez dessus, allez dans Edit -> Preferences -> External Tools, puis dans External Script Editor sélectionnez Visual Studio Editor
+
+   
 
 5. Analyse détaillée de la logique de mouvement
+
     A. Détection de l'intention du joueur
-
     Le script utilise la méthode Update(), exécutée à chaque frame (environ 60 fois par seconde). Nous lisons les entrées via Input.GetAxisRaw("Horizontal/Vertical"). Cette fonction renvoie uniquement des entiers (-1, 0, 1), ce qui garantit que le personnage veut se déplacer exactement d'une unité sur la grille.
-    B. Calcul de la destination
 
+    B. Calcul de la destination
     Dès qu'une touche est détectée, le script crée une variable targetPos. On prend la position actuelle (transform.position) et on y ajoute l'input pour définir les coordonnées exactes de la prochaine case.
 
     C. Exécution fluide via Coroutine

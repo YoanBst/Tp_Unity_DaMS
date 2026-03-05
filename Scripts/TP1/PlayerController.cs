@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             targetPos.x += input.x;
             targetPos.y += input.y;
 
-            //StartCoruoutine permet de lancer la fonction asynchrone (IEnumerator) qui s'exécute sur plusieurs frames. 
+            // StartCoruoutine permet de lancer la fonction asynchrone (IEnumerator) qui s'exécute sur plusieurs frames. 
             // C'est ce qui permet de créer un déplacement fluide "case par case" au lieu d'une téléportation immédiate
             StartCoroutine(Move(targetPos));
         }
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Move(Vector3 targetPos)
     {
         isMoving = true;
-        //tant que notre objet n'a pas atteint sa destination, on le déplace
+        // tant que notre objet n'a pas atteint sa destination, on le déplace
         while((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon){
 
             //MoveTorwards : déplace un point vers une cible, à une vitesse donnée
